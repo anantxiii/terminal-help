@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# For terminal newbs, terminal-help
+
+# Sending welcome message
+echo Hello $USER
+
+# Telling what can you do
+echo "What you want to do?"
+echo ""
+cat whatcanyoudo.txt
+echo
+read -p "-> " number
+
+# If else stuff
+if [ $number == 1 ]
+then
+    read -p "In which folder you want to make the file: " filedir
+    read -p "What should be the name of the file?: " namefile
+    touch $filedir/$namefile
+    echo ""
+    echo -e "You can also do by \033[1mtouch <location/filename>\033[0m"
+
+elif [ $number == 2 ]
+then
+    read -p "In which folder you want to make the folder: " folderdir
+    read -p "What should be the name of the file?: " namedir
+    mkdir $folderdir/$namedir
+    echo ""
+    echo -e "You can also do by \033[1mmkdir <location/foldername>\033[0m"
+
+elif [ $number == 3 ]
+then
+    read -p "What file you want to copy (File name + path): " copyfile
+    read -p "Enter location which in you want to paste: " pacpfile
+    cp $copyfile $pacpfile
+    echo ""
+    echo -e "You can also do by \033[1mcp <filename+path> <pastingpath>\033[0m"
+
+elif [ $number == 4 ]
+then
+    read -p "What file you want to copy (File name + path): " cutfile
+    read -p "Enter location which in you want to paste: " pamvfile
+    mv $cutfile $pamvfile
+    echo ""
+    echo -e "You can also do by \033[1mmv <filename+path> <pastingpath> \033[0m"
+
+
+elif [ $number == 5 ]
+then
+    df -h
+    echo ""
+    echo -e "You can also do the same thing by \033[1mdf -h\033[0m"
+
+elif [ $number == 6 ]
+then
+    neofetch
+    echo ""
+    echo -e "You can do the same thing by running \033[1mneofetch\033[0m"
+
+elif [ $number == 7 ]
+then
+    echo "OK, enter the name of the file"
+    read -p "Enter the path of the file (copy from file manager): " catpath
+    cat $catpath
+    echo ""
+    echo -e "Done. You can also do by \033[1mcat <filepath+name>\033[0m"
+
+elif [ $number == 8 ]
+then
+    fortune | cowsay
+    echo ""
+    echo -e "You can do the same thing by running \033[1mfortune | cowsay\033[0m"
+
+elif [ $number == 9 ]
+then
+    read -p "Enter the path of the file (copy from file manager): " execpath
+    chmod +x $execpath
+    echo ""
+    echo -e "Done. You can also do by \033[1mchmod +x <filepath+name>\033[0m"
+
+elif [ $number == 10 ]
+then
+    htop
+    echo ""
+    echo -e "You can do the same thing by running \033[1mhtop\033[0m"
+
+elif [ $number == 11 ]
+then
+    cal
+    echo ""
+    echo -e "You can do the same thing by running \033[1mcal\033[0m"
+
+elif [ $number == 12 ]
+then
+    read -p "Enter the name of the application: " application
+    echo ""
+    exec $application
+
+elif [ $number == 13 ]
+then
+    read -p "Enter the path of the zip file : " unziploc
+    read -p "Enter the name of the folder it should make while extracting & location of it: " unzipdir
+    unzip -d $unzipdir $unziploc
+    echo ""
+    echo -e "You can do the same thing by \033[1munzip -d <directory name to be made> <file location> \033[0m"
+
+elif [ $number == 14 ]
+then
+    echo "Cheatsheet"
+    echo ""
+    cat ~/terminal-help/cheatsheet.txt
+else
+    echo "Add something valid"
+fi

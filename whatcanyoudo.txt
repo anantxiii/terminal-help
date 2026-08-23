@@ -1,0 +1,15 @@
+Enter the number you want for the functionality you want to see
+1 Making file
+2 Making Folder
+3 Copying file
+4 Moving file
+5 Show disk space
+6 Show some system specs
+7 Show file content
+8 Fortune type of
+9 Make some file executable/user permisson
+10 Task Manager
+11 Calender
+12 Open a application (Will be opened if the terminal command exist)
+13 Unzip a file
+14 Cheatsheet
