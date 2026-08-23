@@ -1,3 +1,5 @@
+**Migrating from Gitlab to Github - https://gitlab.com/AnantGupta/school-talent-searchers**
+
 **Created on 7 Jan 2022 - Last Updated on 20 Jan 2023**
 
 # terminal-help
